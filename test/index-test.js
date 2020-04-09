@@ -2,7 +2,7 @@ const expect = require('expect')
 const fs = require('fs')
 const jsdom = require('jsdom')
 const path = require('path')
-console.error("HALP!")
+
 
 describe('index', () => {
   const html = '<div></div>'
@@ -16,6 +16,7 @@ describe('index', () => {
     }, (err, window) => {
       expect(spy).toHaveBeenCalled('expected console.error to have been called')
       console.error.restore()
+      console.error("HALP!")
       done()
     })
   })
